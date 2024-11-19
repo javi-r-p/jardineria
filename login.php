@@ -8,35 +8,29 @@
 	</head>
 	<body>
 		<?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $telefono = $_POST['telefono'];
-            $contrasenia = $_POST['contrasenia'];
-
-            $query = "SELECT * FROM Clientes WHERE Telefono = ? AND Contrasenia = ?";
-            if ($stmt = $conexion->prepare($query)) {
-                $stmt->bind_param("ss", $telefono, $contrasenia);
-                $stmt->execute();
-                $result = $stmt->get_result();
-
-                if ($result->num_rows > 0) {
-                    echo "Inicio de sesión exitoso.";
-                } else {
-                    echo "Error: Usuario no encontrado.";
-                }
-
-                $stmt->close();
+        if (isset($_POST['enviar'])) {
+            $consulta = "SELECT * FROM Clientes WHERE CodigoCliente =" . $_POST['idCliente']  . "AND" . "Contrasenia =" . $_POST['contrasenia'];
+            $resultado = mysqli_query($conexion, $consulta);
+            $cliente = mysqli_fetch_array($resultado);
+            if (mysqli_num_rows($resultado) > 0) {
+                header('Location: index.php');
             } else {
-                echo "Error en la preparación de la consulta.";
+                echo "Credenciales incorrectas.";
             }
-
-            $conexion->close();
+            mysqli_free_result($resultado);
+            mysqli_close($conexion);
+        } else {
+        ?>
+        <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
+            <label>Identificador de cliente</label>
+            <input type="number" name="idCliente" required>
+            <br>
+            <label>Contraseña</label>
+            <input type="password" name="contrasenia" required>
+            <input type="submit" name="enviar" value="Iniciar sesión">
+        </form>
+        <?php
         }
         ?>
-
-        <form method="post" action="">
-            Teléfono: <input type="text" name="telefono" required><br>
-            Contraseña: <input type="password" name="contrasenia" required><br>
-            <input type="submit" value="Iniciar sesión">
-        </form>
 	</body>
 </html>
