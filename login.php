@@ -38,6 +38,5 @@
             Contraseña: <input type="password" name="contrasenia" required><br>
             <input type="submit" value="Iniciar sesión">
         </form>
-		?>
 	</body>
 </html>
