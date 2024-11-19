@@ -13,7 +13,7 @@
             $contrasenia = $_POST['contrasenia'];
 
             $query = "SELECT * FROM clientes WHERE telefono = ? AND contrasenia = ?";
-            if ($stmt = $conn->prepare($query)) {
+            if ($stmt = $conexion->prepare($query)) {
                 $stmt->bind_param("ss", $telefono, $contrasenia);
                 $stmt->execute();
                 $result = $stmt->get_result();
@@ -29,7 +29,7 @@
                 echo "Error en la preparación de la consulta.";
             }
 
-            $conn->close();
+            $conexion->close();
         }
         ?>
 
