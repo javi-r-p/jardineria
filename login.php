@@ -9,7 +9,9 @@
 	<body>
 		<?php
         if (isset($_POST['enviar'])) {
-            $consulta = "SELECT CodigoCliente, Contrasenia FROM Clientes WHERE CodigoCliente = " . $_POST['idCliente']  . " AND Contrasenia = " . $_POST['contrasenia'];
+            $idCliente = $_POST['idCliente'];
+            $contrasenia = $_POST['contrasenia'];
+            $consulta = "SELECT CodigoCliente, Contrasenia FROM Clientes WHERE CodigoCliente = $idCliente AND Contrasenia = $contrasenia";
             $resultado = mysqli_query($conexion, $consulta);
             $cliente = mysqli_fetch_array($resultado);
             if (mysqli_num_rows($resultado) > 0) {
