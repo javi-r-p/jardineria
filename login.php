@@ -27,6 +27,7 @@
             <br>
             <label>Contraseña</label>
             <input type="password" name="contrasenia" required>
+            <br>
             <input type="submit" name="enviar" value="Iniciar sesión">
         </form>
         <?php
