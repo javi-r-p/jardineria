@@ -11,8 +11,7 @@
         if (isset($_POST['enviar'])) {
             $idCliente = $_POST['idCliente'];
             $contrasenia = $_POST['contrasenia'];
-            $consulta = "SELECT CodigoCliente, Contrasenia FROM Clientes WHERE CodigoCliente = $idCliente AND Contrasenia = $contrasenia";
-            $resultado = mysqli_query($conexion, $consulta);
+            $resultado = mysqli_query($conexion, "SELECT CodigoCliente, Contrasenia FROM Clientes WHERE CodigoCliente = $idCliente AND Contrasenia = '$contrasenia'");
             $cliente = mysqli_fetch_array($resultado);
             if (mysqli_num_rows($resultado) > 0) {
                 header('Location: index.php');
