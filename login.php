@@ -12,7 +12,7 @@
             $telefono = $_POST['telefono'];
             $contrasenia = $_POST['contrasenia'];
 
-            $query = "SELECT * FROM clientes WHERE telefono = ? AND contrasenia = ?";
+            $query = "SELECT * FROM Clientes WHERE Telefono = ? AND Contrasenia = ?";
             if ($stmt = $conexion->prepare($query)) {
                 $stmt->bind_param("ss", $telefono, $contrasenia);
                 $stmt->execute();
