@@ -3,8 +3,8 @@
     <head>
         <?php
             require('conexion.php');
-            if (isset($_GET['id'])) {
-                $codigoProducto = $_GET['id'];
+            if (isset($_GET['codigoProducto'])) {
+                $codigoProducto = $_GET['codigoProducto'];
             }
             $consulta = mysqli_query($conexion, "SELECT * FROM Productos WHERE CodigoProducto = '$codigoProducto'");
         ?>
