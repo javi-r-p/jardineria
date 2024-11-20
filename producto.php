@@ -6,7 +6,7 @@
             if (isset($_GET['id'])) {
                 $codigoProducto = $_GET['id'];
             }
-            $consulta = mysqli_query($conexion, "SELECT * FROM Productos WHERE CodigoProducto = $codigoProducto");
+            $consulta = mysqli_query($conexion, "SELECT * FROM Productos WHERE CodigoProducto = '$codigoProducto'");
         ?>
     </head>
     <body>
