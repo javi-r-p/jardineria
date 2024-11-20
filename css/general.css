@@ -1,0 +1,7 @@
+@font-face {
+    font-family: worksans;
+    src: url(../otros/WorkSans.ttf);
+}
+body {
+    font-family: worksans, 'Times New Roman', Times, Arial, serif;
+}
