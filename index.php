@@ -11,7 +11,6 @@
 	</head>
 	<body>
 		<h1>Tienda online de productos de jardinería</h1>
-		<?php
-		?>
+		<p><a href="login.php">Iniciar sesión</a></p>
 	</body>
 </html>
