@@ -26,7 +26,7 @@
 		<?php
 			if (isset($_GET['ENVIAR'])) {
 				$busqueda = $_GET['busqueda'];
-				$consulta = mysqli_query($conexion, "SELECT Nombre, CodigoProducto, PrecioVenta FROM Productos WHERE Nombre LIKE %'$busqueda'%");
+				$consulta = mysqli_query($conexion, "SELECT Nombre, CodigoProducto, PrecioVenta FROM Productos WHERE Nombre LIKE '%$busqueda%'");
 				echo "<form action='" . $_SERVER['PHP_SELF'] . "' method='GET'>";
 				echo "<input type='submit' name='BORRAR' value='Limpiar búsqueda'>";
 				echo "</form>";
