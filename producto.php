@@ -12,7 +12,7 @@
     <body>
         <?php
             $producto = mysqli_fetch_array($consulta);
-            echo "<h1>" . $nombreProducto['Nombre'] . "</h1>\n";
+            echo "<h1>" . $producto['Nombre'] . "</h1>\n";
             echo "<img src='imagenes/" . $producto['CodigoProducto'] . ".jpg'>\n";
         ?>
     </body>
