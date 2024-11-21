@@ -2,6 +2,8 @@
 	<head>
 		<title>Catálogo de productos</title>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/general.css">
+		<link rel="stylesheet" href="css/productos.css">
 		<?php
 			require('conexion.php');
 			$consulta = mysqli_query($conexion, "SELECT * FROM Productos")
