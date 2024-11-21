@@ -2,7 +2,7 @@ section {
 	background-color: #558249;
 	color: black;
 	padding: 15px;
-	width: 29%;
+	width: 20%;
 	border-radius: 10px;
 	margin-right: 45px;
 	margin-bottom: 20px;
@@ -10,4 +10,5 @@ section {
 	float: right;
 	text-align: center;
     display: block;
+    height: 10%;
 }

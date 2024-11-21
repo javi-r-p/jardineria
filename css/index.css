@@ -24,9 +24,6 @@ h1 {
     font-size: 18px;
     color: white;
 }
-.sidenav a:hover {
-    background-color: #575757;
-}
 .botonApertura {
 	font-size: 30px;
 	cursor: pointer;
