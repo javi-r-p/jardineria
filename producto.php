@@ -11,8 +11,9 @@
     </head>
     <body>
         <?php
-            $nombreProducto = mysqli_fetch_array($consulta);
+            $producto = mysqli_fetch_array($consulta);
             echo "<h1>" . $nombreProducto['Nombre'] . "</h1>\n";
+            echo "<img src='imagenes/" . $producto['CodigoProducto'] . ".jpg'>\n";
         ?>
     </body>
 </html>
