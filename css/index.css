@@ -18,8 +18,8 @@ h1 {
     padding-top: 20px;
     display: none;
 }
-.sidenav a {
-    padding: 10px 15px;
+.sidenav section {
+    padding: 30px;
     text-decoration: none;
     font-size: 18px;
     color: white;
