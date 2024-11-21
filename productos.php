@@ -7,14 +7,16 @@
 		<script src="script.js" type="text/javascript"></script>
 		<?php
 			require("conexion.php");
-			$consulta = mysqli_query($conexion, "SELECT * FROM Productos")
 		?>
 	</head>
 	<body>
 		<section id="cuerpo" class="cuerpo">
 			<h1>Catálogo de productos</h1>
 			<button class="botonApertura" onclick="abrirMenu()">&#9776;</button>
-			<input type="text" placeholder="Introduce un producto a buscar">
+			<form action="<?php $_SERVER['PHP_SELF'] ?>">
+				<input type="text" name="busqueda" placeholder="Introduce un producto a buscar">
+				<input type="submit" name="ENVIAR" value="Hacer búsqueda">
+			</form>
 		</section>
 		<aside class="sidenav" id="menu">
 			<section><a class="botonCierre" onclick="cerrarMenu()">&#215;</a></section>
@@ -22,12 +24,29 @@
 			<section><a href="productos.php">Productos</a></section>
 		</aside>
 		<?php
-			while ($productos = mysqli_fetch_array($consulta)) {
-				echo "<section class='articulo'>\n";
-				echo "<img src='imagenes/" . $productos['CodigoProducto'] . ".jpg' alt='Imagen de " . $productos['CodigoProducto'] . "'>\n";
-				echo "<a href='producto.php?codigoProducto=" . $productos['CodigoProducto'] . "'>" . $productos['Nombre'] . "</a>\n";
-				echo "<p>" . $productos['PrecioVenta'] . " &#8364;</p>\n";
-				echo "</section>\n";
+			if (isset($_GET['ENVIAR'])) {
+				$busqueda = $_GET['busqueda'];
+				$consulta = mysqli_query($conexion, "SELECT Nombre, CodigoProducto, PrecioVenta FROM Productos WHERE Nombre = '$busqueda'");
+				echo "<input type='submit' name='BORRAR' value='Limpiar búsqueda'>";
+				while ($productos = mysqli_fetch_array($consulta)) {
+					echo "<section class='articulo'>\n";
+					echo "<img src='imagenes/" . $productos['CodigoProducto'] . ".jpg' alt='Imagen de " . $productos['CodigoProducto'] . "'>\n";
+					echo "<a href='producto.php?codigoProducto=" . $productos['CodigoProducto'] . "'>" . $productos['Nombre'] . "</a>\n";
+					echo "<p>" . $productos['PrecioVenta'] . " &#8364;</p>\n";
+					echo "</section>\n";
+				}
+				if (isset($_GET['BORRAR'])) {
+					unset($_GET);
+				}
+			} else {
+				$consulta = mysqli_query($conexion, "SELECT * FROM Productos");
+				while ($productos = mysqli_fetch_array($consulta)) {
+					echo "<section class='articulo'>\n";
+					echo "<img src='imagenes/" . $productos['CodigoProducto'] . ".jpg' alt='Imagen de " . $productos['CodigoProducto'] . "'>\n";
+					echo "<a href='producto.php?codigoProducto=" . $productos['CodigoProducto'] . "'>" . $productos['Nombre'] . "</a>\n";
+					echo "<p>" . $productos['PrecioVenta'] . " &#8364;</p>\n";
+					echo "</section>\n";
+				}
 			}
 			mysqli_free_result($consulta);
 			mysqli_close($conexion);
