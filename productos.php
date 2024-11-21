@@ -12,6 +12,7 @@
 	</head>
 	<body>
 		<h1>Catálogo de productos</h1>
+		<button class="botonApertura" onclick="abrirMenu()">&#9776;</button>
 		<input type="text" placeholder="Introduce un producto a buscar">
 		<aside class="sidenav" id="menu">
 			<section><a class="botonCierre" onclick="cerrarMenu()">&#215;</a></section>
