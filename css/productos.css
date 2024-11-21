@@ -1,7 +1,7 @@
 section {
 	background-color: #a0ff86;
 	padding: 15px;
-	width: 20%;
+	width: 30%;
 	border-radius: 10px;
 	margin-right: 45px;
 	margin-bottom: 20px;
@@ -16,6 +16,7 @@ img {
 }
 a {
     text-decoration: none;
+    color: #121212;
 }
 a:hover {
     text-decoration: underline;

@@ -5,7 +5,7 @@
 		<link rel="stylesheet" href="css/general.css">
 		<link rel="stylesheet" href="css/producto.css">
         <?php
-            require('conexion.php');
+            require("conexion.php");
             if (isset($_GET['codigoProducto'])) {
                 $codigoProducto = $_GET['codigoProducto'];
             }

@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="css/index.css">
 		<script src="script.js" type="text/javascript"></script>
 		<?php
-		require('conexion.php');
+		require("conexion.php");
 		$consulta = mysqli_query($conexion, "SELECT * FROM Productos")
 		?>
 	</head>

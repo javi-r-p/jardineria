@@ -3,7 +3,7 @@
 		<title>Jardinería</title>
 		<meta charset="UTF-8">
 		<?php
-			require('conexion.php');
+			require("conexion.php");
 		?>
 	</head>
 	<body>
