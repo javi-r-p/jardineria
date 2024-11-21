@@ -23,6 +23,7 @@
 				echo "<section>\n";
 				echo "<img src='imagenes/" . $productos['CodigoProducto'] . ".jpg' alt='Imagen de " . $productos['CodigoProducto'] . "'>\n";
 				echo "<a href='producto.php?codigoProducto=" . $productos['CodigoProducto'] . "'>" . $productos['Nombre'] . "</a>\n";
+				echo "<p>" . $productos['PrecioVenta'] . " &#8364;</p>\n";
 				echo "</section>\n";
 			}
 		?>

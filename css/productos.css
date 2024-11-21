@@ -1,5 +1,5 @@
 section {
-	background-color: #a0ff86;
+	background-color: #c5c5c5;
 	padding: 15px;
 	width: 30%;
 	border-radius: 10px;
@@ -9,7 +9,6 @@ section {
 	float: right;
 	text-align: center;
     display: block;
-    height: 10%;
 }
 img {
     width: 50%;
