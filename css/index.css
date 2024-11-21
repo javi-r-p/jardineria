@@ -5,3 +5,44 @@ body {
 h1 {
     text-align: center;
 }
+.cuerpo {
+    width: 100%;
+}
+.sidenav {
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    padding-top: 20px;
+}
+.sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+}
+.sidenav a:hover {
+    background-color: #575757;
+}
+.botonApertura {
+	font-size: 30px;
+	cursor: pointer;
+	color: #121212;
+	padding-left: 60px;
+	border: none;
+	background-color: transparent;
+	z-index: 0;
+	margin-top: 10px;
+}
+.cerrarApertura {
+	position: absolute;
+	top: 0;
+	margin-right: 15px;
+	font-size: 40px;
+	background-color: transparent;
+	cursor: pointer;
+    color: #FFFFFF
+}

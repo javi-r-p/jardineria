@@ -8,19 +8,7 @@
 	</head>
 	<body>
 		<?php
-        if (isset($_POST['enviar'])) {
-            $idCliente = $_POST['idCliente'];
-            $contrasenia = $_POST['contrasenia'];
-            $resultado = mysqli_query($conexion, "SELECT CodigoCliente, Contrasenia FROM Clientes WHERE CodigoCliente = $idCliente AND Contrasenia = '$contrasenia'");
-            $cliente = mysqli_fetch_array($resultado);
-            if (mysqli_num_rows($resultado) > 0) {
-                header('Location: index.php');
-            } else {
-                echo "Credenciales incorrectas.";
-            }
-            mysqli_free_result($resultado);
-            mysqli_close($conexion);
-        } else {
+
         ?>
         <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
             <label>Identificador de cliente</label>
@@ -31,8 +19,7 @@
             <br>
             <input type="submit" name="enviar" value="Iniciar sesión">
         </form>
-        <?php
-        }
+        <?php     
         ?>
 	</body>
 </html>

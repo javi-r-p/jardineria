@@ -1,0 +1,12 @@
+section {
+	background-color: #558249;
+	color: black;
+	padding: 15px;
+	width: 29%;
+	border-radius: 10px;
+	margin-right: 45px;
+	margin-bottom: 20px;
+	transition: 0.3s;
+	float: right;
+	text-align: center;
+}
