@@ -13,7 +13,7 @@
 		<section id="cuerpo" class="cuerpo">
 			<h1>Catálogo de productos</h1>
 			<button class="botonApertura" onclick="abrirMenu()">&#9776;</button>
-			<form action="<?php $_SERVER['PHP_SELF'] ?>">
+			<form action="<?php $_SERVER['PHP_SELF'] ?>" method="GET">
 				<input type="text" name="busqueda" placeholder="Introduce un producto a buscar">
 				<input type="submit" name="ENVIAR" value="Hacer búsqueda">
 			</form>
@@ -27,7 +27,9 @@
 			if (isset($_GET['ENVIAR'])) {
 				$busqueda = $_GET['busqueda'];
 				$consulta = mysqli_query($conexion, "SELECT Nombre, CodigoProducto, PrecioVenta FROM Productos WHERE Nombre = '$busqueda'");
+				echo "<form action='" . $_SERVER['PHP_SELF'] . "' method='GET'>";
 				echo "<input type='submit' name='BORRAR' value='Limpiar búsqueda'>";
+				echo "</form>";
 				while ($productos = mysqli_fetch_array($consulta)) {
 					echo "<section class='articulo'>\n";
 					echo "<img src='imagenes/" . $productos['CodigoProducto'] . ".jpg' alt='Imagen de " . $productos['CodigoProducto'] . "'>\n";
