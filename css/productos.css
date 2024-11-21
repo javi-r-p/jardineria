@@ -59,7 +59,7 @@ a:hover {
 	cursor: pointer;
     color: #FFFFFF
 }
-input[text] {
+input[type=text] {
 	border-radius: 4px;
 	border-color: transparent;
 	color: #FFFFFF;
@@ -71,6 +71,6 @@ input[text] {
 	transition: 0.2s ease-in-out;
 	margin-top: 10px;
 }
-input[text]:hover {
+input[type=text]:hover {
 	width: 30%;
 }
