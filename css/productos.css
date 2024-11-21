@@ -9,4 +9,5 @@ section {
 	transition: 0.3s;
 	float: right;
 	text-align: center;
+    display: block;
 }

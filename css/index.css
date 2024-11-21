@@ -16,13 +16,13 @@ h1 {
     left: 0;
     background-color: #111;
     padding-top: 20px;
+    display: none;
 }
 .sidenav a {
     padding: 10px 15px;
     text-decoration: none;
     font-size: 18px;
     color: white;
-    display: block;
 }
 .sidenav a:hover {
     background-color: #575757;
