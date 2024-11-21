@@ -12,11 +12,12 @@ section {
 }
 img {
     width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 a {
     text-decoration: none;
     color: #121212;
-    text-align: center;
 }
 a:hover {
     text-decoration: underline;
